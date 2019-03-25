@@ -105,6 +105,10 @@ char *getUserInput()
 
 void runOptionFromMenu(char *userInput, uint8_t enteredCodeTries[], char curCode[], char enteredCode[])
 {
+  /*
+  Checks to see if the user entered a integer number and only 1 integer number. If there is a \n after the first literal in the string it means that only a number between 0-9 was picked.
+  Since the switch statement only takes in the first literal of the string the \n will be used to check that the number isn't above 9
+  */
   if(isdigit(*userInput) == 0 || *(userInput + 1) != '\0')
   {
     printf("ERROR: Invalid input\n");
